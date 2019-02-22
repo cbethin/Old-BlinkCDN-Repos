@@ -1,0 +1,21 @@
+NODE 1
+go run node.go 127.0.0.1:4001 127.0.0.1:4002 127.0.0.1:4003 127.0.0.1:4004 127.0.0.1:8000
+
+NODE 3
+go run node.go 127.0.0.1:4002 127.0.0.1:4001 127.0.0.1:4003 127.0.0.1:4004 127.0.0.1:8000
+
+NODE 3
+go run node.go 127.0.0.1:4003 127.0.0.1:4001 127.0.0.1:4002 127.0.0.1:4004 127.0.0.1:8000
+
+NODE 4
+go run node.go 127.0.0.1:4004 127.0.0.1:4001 127.0.0.1:4002 127.0.0.1:4003 127.0.0.1:8000
+
+ORACLE
+go run oracle.go 127.0.0.1:8000 linksFile.csv
+
+TEST CLIENT 
+go run testListen.go
+
+TEST SERVER
+go run server.go 127.0.0.1:2000 127.0.0.1:8000 127.0.0.1:9009
+                 [local addr]    [oracle addr]  [dest addr]

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blink Auctions</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/bidEng.js"></script>
+    <script src="js/streamEng.js"></script>
+    <script src="js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><strong>blink</strong></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Product</a></li>
+            <li><a href="#services">What We Do</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/stream.html#E101">Streamer Portal</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- NAVIGATION BAR END  -->
+
+    <div class="row top-row">
+      <!-- Product/Product Info -->
+      <div id="product-box" class="col col-lg-6 col-md-6 col-sm-6">
+        <br>
+        <center>
+        <img src="img/mona-lisa.jpg" alt="Mona Lisa" height="40%" width="40%">
+      </center>
+
+      </div>
+
+      <!-- End of Product Info -->
+
+      <!-- Bidding Log -->
+      <!--
+      <div id="bid-log-box" class="col col-lg-4 col-md-3 col-sm-4">
+        <center>
+          <br>
+          <p id="highestBid">Highest Bid: </p>
+          <p id="bidWinner">Highest Bidder:</p>
+        </center>
+      </div>
+      -->
+      <!-- End of Bidding Log -->
+
+
+      <!-- Live Stream -->
+      <div id="stream-box" class="col col-lg-6 col-md-6 col-sm-6">
+        <div class="row info-row">
+          <center>
+            <img src="img/AuctionPaddle.png" alt="Paddle" height="42" width="42">
+            
+            <img src="img/Time.png" alt="Time" height="42" width="42">
+          </center>
+        </div>
+
+        <div class="row stream-row">
+          <div class="fluid-container">
+            <center><video id="remote-video"></video></center>
+          </div>
+        </div>
+
+        <div class="row game-row">
+          <p> LAST SIX BIDDERS </p>
+          <div class="gamer col-lg-2 col-md-2 col-sm-2"></div>
+          <div class="gamer col-lg-2 col-md-2 col-sm-2"></div>
+          <div class="gamer col-lg-2 col-md-2 col-sm-2"></div>
+          <div class="gamer col-lg-2 col-md-2 col-sm-2"></div>
+          <div class="gamer col-lg-2 col-md-2 col-sm-2"></div>
+          <div class="gamer col-lg-2 col-md-2 col-sm-2"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Live Stream -->
+
+    <div class="row bottom-row">
+      <!-- Lower Left Box -->
+      <div id="this-box" class="col col-lg-6 col-md-6 col-sm-6">
+
+        <b><font size="3">Lot 20</font></b>
+        <center>
+          <b><font size="6">Mona Lisa for Sale</font></b>
+          <br>
+          <font size="4">"We didn't steal it"</font>
+          <p>The Mona Lisa is for sale by Sotherby's auction. The estimated sale price is $XYZ</p>
+        </center>
+      </div>
+
+      <!-- Lower Middle Box -->
+      <div id="this-box" class="col col-lg-6 col-md-6 col-sm-6">
+        <h5>Enter Your Bid:</h5>
+        <center><input type="number" id="placeBidInput"></input> <button id="placeBidButton">Out Bid Them</button></center>
+      </div>
+
+      <!-- Place Bid Box -->
+      <!--
+      <div id="this-box" class="col col-lg-4 col-md-5 col-sm-4">
+
+      </div>
+    </div>
+  -->
+
+
+  </body>
+</html>

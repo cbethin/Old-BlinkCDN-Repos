@@ -1,0 +1,12 @@
+
+Run Media Server:
+/usr/local/bin/amspackager -o video.json -d 8 -i video_h264-426x240-400.mp4 -i video_h264-640x360-800.mp4 -i video_h264-854x480-1600.mp4 -i video_h264-1280x720-3000.mp4 -i video_aac-128.mp4
+
+sudo /usr/local/bin/ams -d /home/ubuntu/afrostream-media-server/serverRoot -p 80
+
+Connect to Media Server From DASH Client:
+http://ec2-18-217-197-120.us-east-2.compute.amazonaws.com/video.json/.mpd
+
+
+Send Large files to AWS server:
+scp -i amf-server.pem test.mp4 ubuntu@ec2-18-217-197-120.us-east-2.compute.amazonaws.com:fileTransfer

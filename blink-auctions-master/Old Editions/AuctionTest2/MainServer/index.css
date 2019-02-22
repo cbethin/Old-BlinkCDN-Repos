@@ -1,0 +1,373 @@
+
+html {
+  font-size: 16px;
+}
+
+.body{
+  background-color: #F8F8F8;
+}
+
+.row {
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
+  width: 100%;
+}
+
+
+/* MODAL POPUP */
+
+.img-choice-container > .row > .col {
+  padding: 10px;
+}
+
+.img-choice-container {
+  padding-left: 0px;
+}
+
+.img-choice-image {
+  height: 100%;
+  width: 100%;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.img-choice-image:hover {
+  background-color: #EDEDED;
+  border: 5px solid #EDEDED;
+}
+
+.clicked-img {
+  background-color: #EDEDED;
+  border: 5px solid #EDEDED;
+}
+
+.unclicked-img {
+  height: 100%;
+  width: 100%;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+/* Navbar */
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+/* Content */
+
+#product-box {
+  margin: 0px;
+  padding: 0px;
+}
+
+#stream-game-box {
+  padding: 0px;
+}
+
+p {
+  padding: 5px 0px;
+  margin-bottom: 0px;
+}
+
+@media screen and (min-width: 992) {
+  #body-content {
+    min-width: 992px;
+    min-height: 550px;
+  }
+}
+
+@media screen and (max-width: 992) {
+  #body-content {
+    max-width: 992px;
+  }
+
+  .game-row {
+    text-align: center;
+  }
+
+  .gamers-label {
+    text-align: center;
+  }
+
+  .place-bid-row {
+    text-align: center;
+  }
+}
+
+/* Lot */
+
+#img-box {
+  min-height: 385px;
+  padding: 10px;
+}
+
+#item-img {
+  background-color: white;
+  min-height: 345px;
+  min-width: 231.53px;
+  margin: 20px;
+  max-height: 60vh;
+  max-width: 75%;
+  border: 2px solid #F0F0F0;
+}
+
+#fancy-line {
+  width: 75%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#item-name {
+  font-size: 3rem;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 0px;
+  padding: auto;
+}
+
+#lot-number {
+  font-size: 1rem;
+  font-weight: 300;
+  padding: 5px;
+  padding-bottom: 0px;
+  margin-left: 25px;
+}
+
+#lot-info {
+  background-color: white;
+}
+
+/* Stream Game Box */
+
+.info-row{
+  min-height: 38px;
+  height:10%;
+  margin: 0;
+}
+
+#timer {
+  font-size: 1.25rem;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+#bid-count {
+  font-size: 1.25rem;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.info-img {
+  height: 90%;
+}
+
+.info-line {
+  height: 100%;
+  text-align: center;
+  margin: 0px;
+  padding: 5px;
+}
+
+.top-row {
+  height: 80vh;
+  background-color: white;
+  padding-right: 2%;
+}
+
+.stream-row {
+  min-height: 250px;
+  height: 65%;
+  text-align: center;
+  margin: 5px;
+  padding-right: 3%;
+}
+
+#remote-video {
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.place-bid-row {
+  margin: 5px;
+  padding-right: 2%;
+  padding-bottom: 2px;
+  text-align: right;
+  display: inline-block;
+}
+
+#placeBidButton {
+  display: inline-block;
+  height: 80%;
+}
+
+h4 {
+  font-size: 1.25rem;
+}·
+
+/* Gamer Row */
+
+div.row.game-row {
+
+}
+
+.game-row {
+  margin: 5px;
+  padding-right: 2%;
+  vertical-align: middle;
+  text-align: right;
+}
+
+#gamers {
+  display: inline-block;
+}
+
+#gamers-label {
+  height: 35px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: right;
+}
+
+.gamer {
+  border-top: 2px solid lightgrey;
+  border-left: 0px solid lightgrey;
+  border-right: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+  min-height: 80px;
+  min-width: 70px;
+  width: 7vw;
+  height: 7vw;
+  padding: 0;
+
+  text-align: center;
+  font-weight: 500;
+}
+
+/*Modal 2*/
+
+#nextBidInfo {
+  padding-top: 2%;
+}
+
+#nextName {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+/*
+
+/* UNORGANIZED MESS */
+
+.col {
+  height: 100%;
+}
+
+.bottom-row {
+  height: 20vh;
+  background-color: white;
+  margin-top: 0px;
+}
+
+.first-place {
+  border-left: 2px solid lightgrey;
+  font-weight: 600;
+}
+
+.userImg {
+  height: 75%;
+  width: 75%;
+  padding: 5px;
+}
+
+video {
+  margin-left: 5px;
+  width:100%;
+  height: 100%;
+  min-height: 0;
+  background-color: black;
+
+  /*
+  padding: 5px;
+  top: 50%;
+  background-color: black;
+  width: 100vh;
+  */
+}
+
+--------------------------------------------------------------------------------
+*/
+
+
+/*
+  Universal Background color is #F8F8F8
+*/
+
+/*
+  Streaming box
+    Elements:
+      - Video Stream
+*/
+#stream-box {
+  padding: 0px;
+  background-color: white;
+}
+
+
+/*
+  Bid Log box
+    Elements:
+      - Bid Entry Box
+      - Bid Entry Button
+      - Highest Bid
+      - Highest Bidder
+*/
+
+#bid-log-box {
+  padding: 0px;
+  background-color: #white;
+  border-right: 2px solid lightgrey;
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+  border-left: 1px solid lightgrey;
+
+}
+
+/*
+  "This" box
+    General Format for other boxes
+    Formated:
+      - Padding
+      - Background Color
+*/
+#this-box {
+  padding: 0px;
+  background-color: #white;
+  border-right: 1px solid lightgrey;
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+  border-left: 2px solid lightgrey;
+  font-family: 'Oswald', sans-serif;
+
+}
+
+/*#placeBidButton{
+  padding: 10px;
+  color: #;
+  background-color: #55acee;
+  border-radius: 25%;
+}*/
+
+#nextImg{
+  background-color: black;
+  min-height: 345px;
+  min-width: 231.53px;
+  margin: 20px;
+  max-height: 60vh;
+  max-width: 75%;
+}

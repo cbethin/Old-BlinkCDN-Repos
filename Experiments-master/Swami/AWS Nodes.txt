@@ -1,0 +1,38 @@
+Node 1 - 18.219.125.124
+ssh -i "swami-key.pem" ubuntu@ec2-18-219-125-124.us-east-2.compute.amazonaws.com
+
+Node 2 - 52.14.102.124
+ssh -i "swami-key.pem" ubuntu@ec2-52-14-102-188.us-east-2.compute.amazonaws.com
+
+Node 3 - 18.216.192.154
+ssh -i "swami-key.pem" ubuntu@ec2-18-216-192-154.us-east-2.compute.amazonaws.com
+
+Node 4 - 18.191.26.130
+ssh -i "swami-key.pem" ubuntu@ec2-18-191-26-130.us-east-2.compute.amazonaws.com
+
+Swami - 18.216.195.86
+ssh -i "swami-key.pem" ubuntu@ec2-18-216-195-86.us-east-2.compute.amazonaws.com
+
+---
+
+Cali Node - 52.53.177.194
+ssh -i "swami-cali.pem" ubuntu@ec2-52-53-177-194.us-west-1.compute.amazonaws.com
+
+Frankfurt, Germany - 18.184.225.196
+ssh -i "swami-frankfurt.pem" ubuntu@ec2-18-184-225-196.eu-central-1.compute.amazonaws.com
+
+London - 35.176.239.10
+ssh -i "swami-london.pem" ubuntu@ec2-35-176-239-10.eu-west-2.compute.amazonaws.com
+
+Tokyo - 13.115.224.27
+ssh -i "swami-ap.pem" ubuntu@ec2-13-115-224-27.ap-northeast-1.compute.amazonaws.com
+
+CLIENT - 18.216.192.154
+
+go run ./node :8001 18.184.225.196:8001 35.176.239.10:8001 13.115.224.27:8001 18.216.195.86:8001 52.53.177.194
+
+:8001
+:8002
+:8003
+:8004
+:8000 Oracle

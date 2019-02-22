@@ -1,0 +1,164 @@
+
+html {
+  font-size: 16px;
+
+}
+
+.body{
+  background-color: #F8F8F8;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.row {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+.col {
+  height: 100%;
+}
+
+.top-row {
+  height: 70vh;
+  background-color: white;
+}
+
+.bottom-row {
+  height: 20vh;
+  background-color: white;
+  margin-top: 0px;
+}
+
+.info-row{
+  height:15%;
+  margin: 0;
+}
+
+.stream-row {
+  height: 60%;
+  margin: 0;
+}
+
+.fluid-container{
+  width: 100%;
+  height: 100%;
+}
+
+
+.game-row {
+  height: 25%;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.gamer {
+  border-top: 2px solid lightgrey;
+  border-left: 0px solid lightgrey;
+  border-right: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+  height: 70%;
+}
+
+
+video {
+  width:75%;
+  height: 75%;
+  background-color: black;
+
+  /*
+  padding: 5px;
+  top: 50%;
+  background-color: black;
+  width: 100vh;
+  */
+}
+
+/*
+--------------------------------------------------------------------------------
+*/
+
+
+/*
+  Universal Background color is #F8F8F8
+*/
+
+/*
+  Streaming box
+    Elements:
+      - Video Stream
+*/
+#stream-box {
+  padding: 0px;
+  background-color: white;
+}
+
+/*
+  Product box
+    Elements:
+      - Product Image
+      - Product Description
+*/
+
+#product-box {
+  padding: 0px;
+
+  /*
+    When Winning color = ffe0b3
+    When Losing color = white
+  */
+  background-color: #ffe0b3;
+  border: 2px solid lightgrey;
+}
+
+/*
+  Bid Log box
+    Elements:
+      - Bid Entry Box
+      - Bid Entry Button
+      - Highest Bid
+      - Highest Bidder
+*/
+
+#bid-log-box {
+  padding: 0px;
+  background-color: #white;
+  border-right: 2px solid lightgrey;
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+  border-left: 1px solid lightgrey;
+
+}
+
+/*
+  "This" box
+    General Format for other boxes
+    Formated:
+      - Padding
+      - Background Color
+*/
+#this-box {
+  padding: 0px;
+  background-color: #white;
+  border-right: 1px solid lightgrey;
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+  border-left: 2px solid lightgrey;
+  font-family: 'Oswald', sans-serif;
+
+}
+
+#placeBidButton{
+  padding: 10px;
+  color: #;
+  background-color: #55acee;
+  border-radius: 25%;
+}

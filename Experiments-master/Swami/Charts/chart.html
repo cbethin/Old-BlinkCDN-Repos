@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Latency Chart</title>
+    <meta charset="UTF-8" />
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
+    <script type="text/javascript">
+
+
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA3zZf7U_-on3Xk2wFGsCvZnKoiuLpqKAA",
+      authDomain: "swami-database.firebaseapp.com",
+      databaseURL: "https://swami-database.firebaseio.com",
+      projectId: "swami-database",
+      storageBucket: "swami-database.appspot.com",
+      messagingSenderId: "333315656264"
+    };
+    firebase.initializeApp(config);
+
+    var firestore = firebase.firestore();
+
+    const docRef = firestore.doc("sampleData/inspiration")
+
+      // Variable for the service ordered
+      var service = 300;
+
+      google.load("visualization", "1", { packages: ["corechart"] });
+      google.setOnLoadCallback(drawChart);
+      var data, options;
+
+      function drawChart() {
+        data = new google.visualization.DataTable();
+        data.addColumn('number', 'Packet Number');
+        data.addColumn('number', 'Latency');
+        data.addColumn('number', 'Service');
+        data.addRows([[1,  255, service],
+          [2,  210, service],
+          [3,  199, service],
+          [4,  225, service],
+          [5,  220, service],
+          [6,  280, service],
+          [7,  310, service],
+          [8,  320, service],
+          [9,  280, service],
+          [10, 290, service],
+          [11, 260, service],
+          [12, 278, service]
+        ]);
+
+        options = {
+          title: 'Latency for Each Packet Sent',
+          hAxis: {
+            title: 'Packet Number',
+            viewWindow: {
+              max: data.getColumnRange(0)["max"],
+              min: 0
+            },
+          },
+          vAxis: { title: 'Latency (milliseconds)', max: 10},
+          legend: 'none',
+          interpolateNulls: true,
+          series: {
+            1: { lineWidth: 1, pointSize: 0 }
+          },
+          sortAscending: true
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+        console.log(data.getColumnRange(0)["max"]);
+      }
+
+      function addNewData(someData) {
+        data.addRows(someData);
+        options = {
+          title: 'Latency for Each Packet Sent',
+          hAxis: {
+            title: 'Packet Number',
+            viewWindow: {
+              max: data.getColumnRange(0)["max"],
+              min: 0
+            },
+          },
+          vAxis: { title: 'Latency (milliseconds)', max: 10},
+          legend: 'none',
+          interpolateNulls: true,
+          series: {
+            1: { lineWidth: 1, pointSize: 0 }
+          },
+          sortAscending: true
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+
+        function getData () {
+
+        }
+      }
+
+      function getRealTimeUpdates(){
+        docRef.onSnapshot(function (doc)) {
+          if (doc && doc.exists) {
+            const myData = doc.data();
+            var latency = myData.Latency
+          }
+        }
+      }
+
+
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+@import "@material/button/mdc-button";
+@import "@material/menu/mdc-menu";
+@import "@material/chips/mdc-chips";
+@import "@material/card/mdc-card";
+
+// @import "@material/menu/mdc-menu__items";
+
+$primary-color: #00796B;
+$selection-color: #EDF5F4;
+
+:root {
+  --mdc-theme-primary: #00796B;
+}
+
+html, body {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  background-color: white;
+  font-family: 'Roboto';
+  margin: 0;
+  width: 100vw;
+  // padding-top: 0.1px; // Prevent header h1 margin from pushing body down
+}
+
+.header {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  text-align: left;
+  background-color: $primary-color;
+  height: 56px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    color: white;
+    font-size: 28px;
+    margin: 0;
+    padding-left: 10px;
+  }
+
+  #brand:hover {
+      cursor: pointer;
+  }
+}
+
+// BODY content
+
+.body-content {
+  // display: block;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.page {
+  padding-top: 50px;
+  // padding-left: 25px;
+  // padding-right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  flex: 0 0 100vw;
+  left: 0;
+  width: 100vw;
+  //
+  // -webkit-box-sizing: border-box;
+  //    -moz-box-sizing: border-box;
+  //         box-sizing: border-box;
+}
+
+
+.selection-page {
+  // padding-top: 50px;
+  // padding-left: 25px;
+  // padding-right: 25px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
+  // position: relative;
+  // flex: 0 0 100vw;
+  // left: 0;
+  //
+  // // -webkit-box-sizing: border-box;
+  // //    -moz-box-sizing: border-box;
+  // //         box-sizing: border-box;
+}
+
+.data-selection {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // margin-top: 50px;
+  margin: 10px;
+}
+
+.data-selection__header {
+  font-weight: 300;
+}
+
+.data-selection__chipset {
+  padding-left: 0px;
+}
+
+.data-selection__chipset__chip {
+  margin-right: 12px !important;
+  text-align: center !important;
+  width: 100px;
+  // border-radius: 10% !important;
+}
+
+.mdc-chip.mdc-chip--selected {
+  border: 1px solid $primary-color;
+}
+
+hr {
+  margin-top: 35px;
+  margin-bottom: 25px;
+  background-color: gray;
+  height: 0.5px;
+  width: 300px;
+  opacity: 0.2;
+}
+
+hr.vertical {
+  width: 1px;
+  height: 50px;
+  margin: 0px 10px;
+  pointer-events: none;
+}
+
+#next-btn {
+  margin-top: 50px;
+  // font-size: 36px;
+}
+
+// SLA SLA-page
+
+.SLA-page {
+  left: 100vw;
+  opacity: 0
+}
+
+.mdc-card {
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.card-container {
+  width: 300px;
+  margin-top: 15px;
+
+  hr.vertical {
+    width: 1px;
+    height: 50px;
+    margin: 0px 30px;
+    pointer-events: none;
+  }
+
+
+  :hover {
+    border: 0.5px solid lighten($primary-color, 3%);
+    background-color: lighten($selection-color, 3%) !important;
+    color: $primary-color;
+    cursor: pointer;
+  }
+
+  .selected {
+    border: 1px solid $primary-color;
+    background-color: $selection-color !important;
+    color: $primary-color;
+    cursor: pointer;
+  }
+}
+
+.card-container__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.latency-label {
+  padding-left: 20px;
+  font-weight: 500;
+  font-color: $primary-color;
+  pointer-events: none;
+}
+
+.price-label {
+  padding-right: 20px;
+  font-size: 28px;
+  font-weight: 200;
+  pointer-events: none;
+}
+
+
+// GRAPHS Page
+.graph-page {
+  left: 100vw;
+  opacity: 0;
+  padding: 0;
+
+  button {
+    margin-top: 25px;
+    margin-left: 5px;
+  }
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+#graph-container1 {
+
+}
+#graph-container2 {
+  height: 0px;
+  opacity: 0;
+}

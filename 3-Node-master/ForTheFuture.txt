@@ -1,0 +1,2 @@
+// Any server can act as bouncer or a server. Client can randomly decide who becomes their server and 
+bouncer. This way the path from server to client is also randomized!

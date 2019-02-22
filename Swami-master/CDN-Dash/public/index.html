@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swami Demo</title>
+  <!-- <link rel="shortcut icon" href="https://material.io/favicon.ico"> -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script> -->
+  <script src="bundle.js" async></script>
+  <script type="text/javascript">
+    var data, dataFirst, dataSecond, dataMap;
+    google.load('visualization', '1.0', {'packages':['corechart']});
+    google.setOnLoadCallback(drawCharts);
+
+    function drawCharts() {
+      drawChart();
+      drawChartT1T2();
+      drawChartT2T3();
+      drawRegionsMap();
+    }
+    function drawChart() {
+      data = new google.visualization.DataTable();
+      data.addColumn('number', 'Packet Number');
+      data.addColumn('number', 'Latency');
+      data.addColumn('number', 'Service');
+
+      var options = {
+        title: '',
+        hAxis: {
+          title: 'Packet Number',
+          slantedText: false,
+          viewWindow: {
+            max: data.getColumnRange(0)["max"],
+            min: data.getColumnRange(0)["min"]
+          },
+        },
+        vAxis: {
+          title: 'Latency (milliseconds)',
+          slantedText: false,
+          max: 10,
+          viewWindow: {
+            min: 0
+          }
+        },
+        legend: 'none',
+        interpolateNulls: true,
+        series: {
+          1: { lineWidth: 1, pointSize: 0 }
+        },
+        sortAscending: true
+      };
+
+      var chart = new google.visualization.ScatterChart(document.getElementById('chartTotal_div'));
+      chart.draw(data, options);
+    }
+    function drawChartT1T2() {
+      dataFirst = new google.visualization.DataTable();
+      dataFirst.addColumn('number', 'Packet Number');
+      dataFirst.addColumn('number', 'Latency');
+
+      var options = {
+        title: '',
+        hAxis: {
+          title: 'Packet Number',
+          slantedText: false,
+          viewWindow: {
+            max: dataFirst.getColumnRange(0)["max"],
+            min: dataFirst.getColumnRange(0)["min"]
+          },
+        },
+        vAxis: {
+          title: 'Latency (milliseconds)',
+          slantedText: false,
+          max: 10,
+          viewWindow: {
+            min: 0
+          }
+        },
+        legend: 'none',
+        interpolateNulls: true,
+        series: {
+          1: { lineWidth: 1, pointSize: 0 }
+        },
+        sortAscending: true
+      };
+
+      var chart = new google.visualization.ScatterChart(document.getElementById('chartFirst_div'));
+      chart.draw(dataFirst, options);
+      console.log(dataFirst.getColumnRange(0)["max"]);
+    }
+    function drawChartT2T3() {
+      dataSecond = new google.visualization.DataTable();
+      dataSecond.addColumn('number', 'Packet Number');
+      dataSecond.addColumn('number', 'Latency');
+
+      var options = {
+        title: '',
+        hAxis: {
+          title: 'Packet Number',
+          slantedText: false,
+          viewWindow: {
+            max: dataSecond.getColumnRange(0)["max"],
+            min: dataSecond.getColumnRange(0)["min"]
+          },
+        },
+        vAxis: {
+          title: 'Latency (milliseconds)',
+          slantedText: false,
+          max: 10,
+          viewWindow: {
+            min: 0
+          }
+        },
+        legend: 'none',
+        interpolateNulls: true,
+        series: {
+          1: { lineWidth: 1, pointSize: 0 }
+        },
+        sortAscending: true
+      };
+
+      var chart = new google.visualization.ScatterChart(document.getElementById('chartSecond_div'));
+      chart.draw(dataSecond, options);
+      console.log(dataSecond.getColumnRange(0)["max"]);
+    }
+    function drawRegionsMap() {
+      var dataMap = google.visualization.arrayToDataTable([
+        ['Country', 'Activation'],
+        ['Germany', 0],
+        ['United States', 0],
+        ['United Kingdom', 0],
+        ['Japan', 0]
+      ]);
+
+      var options = {
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+      chart.draw(dataMap, options);
+    }
+  </script>
+  <link rel="stylesheet" href="bundle.css">
+</head>
+<body class="shrine-home">
+  <div class="header">
+    <h1 id="brand">Swami</h1>
+  </div>
+
+  <div class="body-content">
+    <div class="selection-page page" style="visibility: visible;">
+      <div id="src-select" class="data-selection">
+        <h4 class="data-selection__header">Choose Source:</h4>
+        <div id="src-chipset" class="mdc-chip-set mdc-chip-set--choice data-selection__chipset">
+          <div class="mdc-chip data-selection__chipset__chip" tabindex="0">
+            <div class="mdc-chip__text">California</div>
+          </div>
+          <div class="mdc-chip data-selection__chipset__chip" tabindex="0">
+            <div class="mdc-chip__text">London</div>
+          </div>
+          <div class="mdc-chip data-selection__chipset__chip" tabindex="0">
+            <div class="mdc-chip__text">Germany</div>
+          </div>
+          <div class="mdc-chip data-selection__chipset__chip" tabindex="0">
+            <div class="mdc-chip__text">Tokyo</div>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+      <div id="dst-select" class="data-selection">
+        <h4 class="data-selection__header">Choose Destination:</h4>
+        <div id="dest-chipset" class="mdc-chip-set mdc-chip-set--choice data-selection__chipset">
+          <div class="mdc-chip data-selection__chipset__chip" tabindex="0">
+            <div class="mdc-chip__text">California</div>
+          </div>
+          <div class="mdc-chip data-selection__chipset__chip" tabindex="0">
+            <div class="mdc-chip__text">London</div>
+          </div>
+          <div class="mdc-chip data-selection__chipset__chip" tabindex="0">
+            <div class="mdc-chip__text">Germany</div>
+          </div>
+          <div class="mdc-chip data-selection__chipset__chip" tabindex="0">
+            <div class="mdc-chip__text">Tokyo</div>
+          </div>
+        </div>
+        <hr>
+      </div>
+
+      <button id="next-btn" class="mdc-button mdc-button--raised">Next</button>
+    </div>
+
+    <div class="SLA-page page" style="visibility: visible">
+      <h1>Pick Your Service</h1>
+      <div class="card-container">
+        <div class="mdc-card card-container__card">
+            <h1 class=latency-label>300 ms</h1>
+            <hr class=vertical>
+            <p class=price-label>$100</p>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="mdc-card card-container__card">
+            <h1 class=latency-label>200 ms</h1>
+            <hr class=vertical>
+            <p class=price-label>$50</p>
+        </div>
+      </div>
+      <!-- <div class="card-container">
+        <div class="mdc-card card-container__card">
+            <h1 class=latency-label>100 ms</h1>
+            <hr class=vertical>
+            <p class=price-label>$20</p>
+        </div>
+      </div> -->
+      <hr>
+      <button id="to-graph-btn" class="mdc-button mdc-button--raised">Next</button>
+    </div>
+
+    <div class="graph-page page">
+      <h1 id="graph-label">End-To-End Path Diagnostics</h1>
+        <div id="graph-container1" class="mdc-card">
+          <div id="chartTotal_div" style="width: 700px; height: 400px;"></div>
+          <div class="row">
+            <div id="chartFirst_div" style="width: 400px; height: 300px;"></div>
+            <div id="chartSecond_div" style="width: 400px; height: 300px;"></div>
+          </div>
+        </div>
+        <div id="graph-container2" class="mdc-card">
+          <div id="regions_div" style="width: 900px; height: 500px;"></div>
+        </div>
+        <div class="row">
+          <button id="stop-test-btn" class="mdc-button mdc-button--raised">Stop Test</button>
+          <button id="show-map-btn" class="mdc-button mdc-button--raised">Show Nodes Used</button>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

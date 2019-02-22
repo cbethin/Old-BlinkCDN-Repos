@@ -1,0 +1,30 @@
+/* CSS code to format the parameter list and elements */
+body {
+  font-family:'Segoe UI';
+  background-color:#f0f0f0;
+}
+
+video {
+  width:640px;
+  height:480px;
+  border:1px black solid;
+}
+
+#grid {
+  display: -ms-grid;
+  -ms-grid-columns: 35% 65%;
+  -ms-grid-rows: 1fr;
+}
+
+#col1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  padding:20px;
+}
+#col2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+#curInfo{
+  display:none;
+}
